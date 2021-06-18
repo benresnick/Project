@@ -1,22 +1,26 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Ben's Site</title>
-        <script src="firstscript.js"></script>
-        <link rel="stylesheet" href="homepage.css"/>
-
+        <script src="{{ url_for('static', filename ='firstscript.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename ='homepage.css') }}" />
     </head>
     <body>
+
         <div id="topblock">
             <div id="pfp">
-                <img id="image" src="selfportrait.jpg" alt="Picture of Ben Resnick"/>
+                <img id="image" src="{{ url_for('static', filename ='selfportrait.jpg') }}" alt="Picture of Ben Resnick"/>
+
             </div>
             <div id="header">
-                <div id="name">Ben Resnick</div>
+                <div id="name"> {{name}} </div>
                 <div id="bio">Bringing insights from science and analytics to engineer solutions for the finance and blockchain industries</div>
             </div>
+
             <div id="resume">
-                <a download="bensresume.pdf" href="bensresume.pdf">
-                    <img src="resume.png" id="resumeimg">
+                <a download="{{ url_for('static', filename ='bensresume.pdf') }}" href="{{ url_for('static', filename ='bensresume.pdf') }}">
+
+                    <img src="{{ url_for('static', filename ='resume.png') }}" id="resumeimg">
                 </a>
             </div>
         </div>
